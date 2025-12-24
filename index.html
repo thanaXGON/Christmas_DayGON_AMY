@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Christmas Day GON&AMY 🌲</title>
+
+<style>
+:root{
+  --bg1:#0b1026;
+  --bg2:#1b2a4e;
+  --green:#2ecc71;
+  --red:#ff6b6b;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  font-family: 'Mitr', sans-serif;
+  margin:0;
+  height:100vh;
+  background: linear-gradient(
+    180deg,
+    #e07fd8,
+    #d6afd3
+  );
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: system-ui, sans-serif;
+  color:#fff;
+  overflow:hidden;
+}
+
+
+.card{
+  width:100%;
+  max-width:390px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius:26px;
+  padding:20px 16px 26px;
+  box-shadow:0 25px 50px rgba(0,0,0,.45);
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+h1{
+  font-size:1.2rem;
+  margin:6px 0 14px;
+}
+#date{
+  display: inline-block;
+  letter-spacing: 2px;
+  animation: pop .4s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(1.3); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+
+.tree-wrap{
+  position:relative;
+  width:260px;
+  height:340px;
+  margin:0 auto;
+}
+
+.star{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:34px;
+  filter:drop-shadow(0 0 10px gold);
+}
+
+.layer{
+  margin:0 auto;
+  width:0;height:0;
+  border-left:120px solid transparent;
+  border-right:120px solid transparent;
+  border-bottom:100px solid #1e8449;
+  margin-top:-20px;
+}
+
+.layer.mid{
+  border-left:100px solid transparent;
+  border-right:100px solid transparent;
+  border-bottom:90px solid #249c63;
+}
+
+.layer.top{
+  border-left:80px solid transparent;
+  border-right:80px solid transparent;
+  border-bottom:80px solid var(--green);
+}
+
+.trunk{
+  width:44px;
+  height:52px;
+  background:#6e2c00;
+  margin:6px auto 0;
+  border-radius:6px;
+}
+
+.light{
+  position: absolute;
+  font-size: 11px;
+  pointer-events: none;
+  opacity: .85;
+  animation: twinkle 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 4px rgba(255,105,180,.5));
+}
+
+@keyframes twinkle{
+  0%{
+    opacity: .4;
+    transform: scale(.85);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+
+
+@keyframes blink{
+  from{opacity:.4;}
+  to{opacity:1;}
+}
+
+
+.gift{
+  position:absolute;
+  width:54px;
+  height:54px;
+
+ 
+  background: rgba(255, 182, 193, 0.18);
+  border: 2px solid rgba(255, 105, 180, 0.55);
+
+  border-radius: 14px; 
+  backdrop-filter: blur(8px);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:26px;
+  cursor:pointer;
+
+  box-shadow:
+    0 8px 18px rgba(255,105,180,.25),
+    inset 0 0 10px rgba(255,255,255,.25);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.gift:hover{
+  box-shadow:
+    0 10px 22px rgba(255,105,180,.35),
+    inset 0 0 12px rgba(255,255,255,.35);
+}
+
+.gift:active{
+  transform: scale(.92);
+}
+
+.shake{animation:shake .4s;}
+
+@keyframes shake{
+  0%{transform:rotate(0);}
+  25%{transform:rotate(6deg);}
+  50%{transform:rotate(-6deg);}
+  75%{transform:rotate(6deg);}
+  100%{transform:rotate(0);}
+}
+
+
+.message{
+  margin-top:14px;
+  min-height:36px;
+  font-size:1.1rem;
+}
+
+.actions{
+  position: relative;
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  margin-top:20px;
+  display: none;
+}
+
+.actions button{
+  padding:12px 20px;
+  font-size:16px;
+  border-radius:16px;
+  border:none;
+  cursor:pointer;
+  transition: transform .3s ease, width .4s ease, height .4s ease;
+}
+
+.yes{
+  background: linear-gradient(135deg,#ff8ccf,#ff5fa2);
+  color:white;
+}
+
+.shy{
+  background:#eee;
+}
+
+
+.yes.fullscreen{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  font-size:32px;
+  border-radius:0;
+  z-index:9999;
+}
+
+
+.snow{
+  position:fixed;
+  top:-10px;
+  color:#fff;
+  font-size:12px;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh);
+    opacity:0;
+  }
+}
+
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:18px;
+  animation:float 3s linear forwards;
+}
+
+@keyframes float{
+  to{
+    transform:translateY(-120vh);
+    opacity:0;
+  }
+}
+.tree-wrap{
+  position:relative;
+  width:360px;
+  margin:0 auto;
+}
+
+.tree-img{
+  width:100%;
+  display:block;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.45));
+}
+
+.final{
+  position: fixed;
+  inset: 0;
+  background: #fff6fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: shakeScreen .4s infinite;
+}
+.yes.fullscreen{
+  position: fixed;
+  top: 35%;
+  left: 10%;
+  transform: translate(-50%, -50%) scale(0.2);
+
+  width: auto;
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: min(18vw, 160px);
+  font-weight: 800;
+  letter-spacing: 6px;
+  line-height: 1;
+
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  z-index: 9999;
+
+  animation: zoomInSoft 0.9s ease-out forwards;
+}
+
+
+
+
+.final h1{
+  font-family: 'Mitr', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #ff5fa2;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 0 4px 10px rgba(255,105,180,.25);
+}
+
+.kiss{
+  margin-top: 20px;
+  font-size: 90px;
+  font-family: 'Mitr', cursive;
+  font-weight: 600;
+
+  background: linear-gradient(
+    45deg,
+    #ff5fa2,
+    #ff9ad5,
+    #ffc1e3,
+    #ff5fa2
+  );
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    kissZoom 1s infinite,
+    gradientMove 3s ease infinite;
+}
+
+
+@keyframes kissZoom{
+  0%{transform:scale(1) rotate(0);}
+  25%{transform:scale(1.1) rotate(3deg);}
+  50%{transform:scale(1.2) rotate(-3deg);}
+  75%{transform:scale(1.1) rotate(3deg);}
+  100%{transform:scale(1) rotate(0);}
+}
+
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+@keyframes shakeScreen{
+  0%{transform:translate(0,0);}
+  25%{transform:translate(4px,0);}
+  50%{transform:translate(-4px,0);}
+  75%{transform:translate(0,4px);}
+  100%{transform:translate(0,0);}
+}
+
+
+.final-heart{
+  position: absolute;
+  font-size: 32px;
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce{
+  from{
+    transform: translateY(0) scale(1);
+  }
+  to{
+    transform: translateY(-80px) scale(1.2);
+  }
+}
+@keyframes zoomInSoft{
+  0%{
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  60%{
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.scare{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s;
+}
+
+.scare.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scare img{
+  width: min(80vw, 360px);
+  animation: popScare .3s ease-out;
+}
+
+@keyframes popScare{
+  0%{transform: scale(.2);}
+  80%{transform: scale(1.1);}
+  100%{transform: scale(1);}
+}
+
+
+body.shake{
+  animation: screenShake .4s;
+}
+
+@keyframes screenShake{
+  0%{transform:translate(0)}
+  25%{transform:translate(6px, -6px)}
+  50%{transform:translate(-6px, 6px)}
+  75%{transform:translate(6px, 6px)}
+  100%{transform:translate(0)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>คริสต์มาสเดย์ 🎄</h1>
+
+  <div class="tree-wrap" id="tree">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/045/838/466/small/christmas-tree-on-transparent-background-png.png" class="tree-img" alt="Christmas Tree">
+</div>
+
+
+<div class="message" id="msg"></div>
+
+<div class="actions" id="actions">
+  <button class="yes" id="yesBtn">🎁 เปิด</button>
+  <button class="shy" id="noBtn">🙈 ไม่อะ</button>
+</div>
+
+<div id="scare" class="scare">
+  <img src="kissme.png" alt="surprise">
+</div>
+<audio id="scareSound" src="luv.m4a" preload="auto"></audio>
+
+
+<script>
+const tree=document.getElementById("tree");
+const actions=document.getElementById("actions");
+
+const total=7;
+const special=Math.floor(Math.random()*total);
+const scareIndex = 2;
+
+const pos = [
+ {t:40,l:150},
+ {t:100,l:175},
+ {t:125,l:95},
+ {t:170,l:205},
+ {t:205,l:80},
+ {t:225,l:210},
+ {t:245,l:150}
+];
+
+
+for(let i=0;i<total;i++){
+  const g=document.createElement("div");
+  g.className="gift";
+  g.innerHTML="🎁";
+  g.style.top=pos[i].t+"px";
+  g.style.left=pos[i].l+"px";
+
+  g.onclick = () => {
+    g.classList.add("shake");
+    setTimeout(()=>g.classList.remove("shake"),400);
+
+    if(i === scareIndex){
+      showScare();
+      return;
+    }
+
+    if(i === special){
+      msg.innerHTML = "❤️ เปิดดู ❤️";
+      actions.style.display = "flex";
+      hearts();
+    }else{
+      msg.innerHTML = "💔 ยังไม่ใช่อันนี้เด้อ 💔";
+    }
+  };
+
+  tree.appendChild(g);
+}
+
+function showScare(){
+  const scare = document.getElementById("scare");
+  const sound = document.getElementById("scareSound");
+
+  sound.currentTime = 0;
+  sound.volume = 0.5;
+  sound.play();
+
+  scare.classList.add("show");
+  document.body.classList.add("shake");
+
+  setTimeout(()=>{
+    sound.pause();
+    scare.classList.remove("show");
+    document.body.classList.remove("shake");
+  }, 5000);
+}
+
+
+
+for(let i = 0; i < 12; i++){
+  const l = document.createElement("div");
+  l.className = "light";
+
+  const hearts = ["❤️","💗","💖","💕"];
+  l.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+  
+  const y = Math.random() * 160 + 110;
+
+  
+  const spread = y * 0.5;
+  const x = 150 + (Math.random() * spread - spread / 2);
+
+  l.style.top = y + "px";
+  l.style.left = x + "px";
+  l.style.animationDelay = Math.random() * 2 + "s";
+
+  tree.appendChild(l);
+}
+
+
+
+
+setInterval(()=>{
+  const s=document.createElement("div");
+  s.className="snow";
+  s.innerHTML="❄️";
+  s.style.left=Math.random()*100+"vw";
+  s.style.animationDuration=4+Math.random()*4+"s";
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),8000);
+},300);
+
+
+function hearts(){
+  for(let i=0;i<12;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),4000);
+  }
+}
+let noCount = 0;
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const msg = document.getElementById("msg");
+
+noBtn.onclick = () => {
+  noCount++;
+
+
+  const scale = 1 + noCount * 0.15;
+  yesBtn.style.transform = `scale(${scale})`;
+
+  msg.innerText = [
+    "แน่ใจหรอออ ",
+    "ลองคิดดูก่อนนน 💗",
+    "มันจะดีนะ ",
+    "คิดผิดคิดใหม่ ",
+    "กอนเศร้า 🥺 ",
+    "งงนะทำทำไม ❤️",
+    "กอนก็ไม่รู้กับเอมี่แล้ว 💞",
+    "จะเป็นหรือว่าไม่เป็น 😳",
+    "เป็นแฟนกันนะอ้วนน 😏",
+    "โอเค… ยอมเถอะ 💍"
+  ][Math.min(noCount-1,9)];
+
+
+  if(noCount >= 10){
+  yesBtn.classList.add("fullscreen");
+  noBtn.style.display = "none";
+
+ 
+  yesBtn.innerHTML = "เป็นหมดทางเลือกแล้ว😘 ";
+}
+
+};
+
+yesBtn.onclick = () => {
+  finalScene();
+};
+
+function finalScene(){
+  document.body.innerHTML = "";
+
+  const final = document.createElement("div");
+  final.className = "final";
+
+ 
+  for(let i=0;i<20;i++){
+    const h = document.createElement("div");
+    h.className = "final-heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random()*100 + "vw";
+    h.style.top = Math.random()*100 + "vh";
+    h.style.animationDelay = Math.random()*1.5 + "s";
+    final.appendChild(h);
+  }
+
+  
+  const text = document.createElement("h1");
+text.innerHTML = " เป็นแฟนกันแล้วนะอ้วน ❤<br><span id='date'>--/--/----</span>";
+final.appendChild(text);
+
+
+const kiss = document.createElement("div");
+kiss.className = "kiss";
+kiss.innerText = "จุ๊บ จุ๊บ จุ๊บ";
+kiss.style.opacity = 0;
+final.appendChild(kiss);
+
+
+setTimeout(()=>{
+  kiss.style.opacity = 1;
+}, 1500);
+
+
+  document.body.appendChild(final);
+
+  startDateShuffle();
+}
+function startDateShuffle(){
+  const dateEl = document.getElementById("date");
+  const finalDate = "25/12/2025";
+
+  const interval = setInterval(()=>{
+    const d = String(Math.floor(Math.random()*28)+1).padStart(2,"0");
+    const m = String(Math.floor(Math.random()*12)+1).padStart(2,"0");
+    const y = Math.floor(Math.random()*9000)+1000;
+    dateEl.innerText = `${d}/${m}/${y}`;
+  }, 80);
+
+  setTimeout(()=>{
+    clearInterval(interval);
+    dateEl.innerText = finalDate;
+  }, 3000);
+}
+
+
+
+</script>
+
+</body>
+</html>
